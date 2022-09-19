@@ -45,6 +45,12 @@ api.interceptors.response.use(response => {
 
           failedRequestQueue.forEach(request => request.onSuccess(token));
           failedRequestQueue = [];
+
+          if (typeof window) {
+            signOut();
+          }
+
+          signOut();
         }).catch(err => {
           failedRequestQueue.forEach(request => request.onError(err));
           failedRequestQueue = [];
@@ -66,7 +72,9 @@ api.interceptors.response.use(response => {
         })
       });
     } else {
-      signOut();
+      if (typeof window) {
+        signOut();
+      }
     }
   }
 
