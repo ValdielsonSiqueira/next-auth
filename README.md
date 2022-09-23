@@ -3,6 +3,17 @@
 <img src="https://media.giphy.com/media/RYZwi9CUtrVyI95Rwd/giphy.gif" alt="Login">
 
 > Abstração para realiação de login no Nexjs, usando Cookies para controle.
+
+## 🎓 Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- [Node.js](https://nodejs.org/en/)
+- [React](https://reactjs.org)
+- [TypeScript](https://www.typescriptlang.org/)
+- [NextJS](https://nextjs.org/docs/api-reference/next/image)
+- [ChakraUi](https://chakra-ui.com/)
+
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
