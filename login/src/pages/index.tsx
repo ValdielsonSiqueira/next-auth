@@ -1,7 +1,7 @@
 import { FormEvent, useContext, useState } from 'react';
 import { withSSRGuest } from '../../utils/withSSRGuest';
 import { AuthContext } from '../contexts/AuthContext';
-import { Text, Input as ChakraInput, Button, Stack, Flex } from "@chakra-ui/react";
+import { Text, Input as ChakraInput, Button, Stack, Flex, FormLabel } from "@chakra-ui/react";
 import Image from 'next/image'
 
 
@@ -26,86 +26,109 @@ export default function Home() {
       w="100vw"
       h="100vh"
       align="center"
+      backgroundImage="/background.svg"
+      backgroundPosition="center"
+      backgroundSize="cover"
       justify="center"
-      >
+    >
       <Flex
-        as="form"
-        w="100%"
+        w="622px"
         h="100%"
-        maxWidth={900}
-        bg="#FFD6B9"
-        p="8"
-        flexDir="column"
-        onSubmit={handleSubmit}
-      >
-        <h1>Turn your ideas into reality.</h1>
-      </Flex>
-      <Flex
-        as="form"
-        w="100%"
-        h="100%"
-        maxWidth={500}
-        align="center"
-        justify="center"
         bg="white"
-        p="8"
+        boxShadow="1px 1px 8px gray;"
+        align="center"
+        p="4.75rem"
+        justify="center"
         flexDir="column"
-        onSubmit={handleSubmit}
       >
-        <Stack spacing="1">
-          <Flex pb="2rem">
-            <Image
-              src="/logo.svg"
-              alt="Picture of the author"
-              width={72}
-              height={72}
-            />
-          </Flex>
-          <Text
-            fontSize="2rem" 
-            fontWeight="bold" 
-            letterSpacing="right"
-            color="text.900"
-          >
-            Login to your Account
-          </Text>
-          <Text
-            fontSize="1rem"    
-            color="text.900"
-          >
-            See what is going on with your business
-          </Text>
+        <Image
+          src="/SNEAKER.svg"
+          alt="Picture of the author"
+          width={420}
+          height={220}
+        />
+        <Text
+          fontSize="4.5rem" 
+          fontWeight="bold" 
+          letterSpacing="right"
+          color="#000000"
+          fontStyle="SemiBold"
+        >  
+          WORLD
+        </Text>
+        <Image
+          src="/Waves.svg"
+          alt="Picture of the author"
+          width={110}
+          height={25}
+        />
+        <Text
+          mt="1rem"
+          fontSize="1.25rem" 
+          fontWeight="Regular" 
+          letterSpacing="right"
+          color="#000000"
+          textAlign="center"
+          fontStyle="SemiBold"
+        >  
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+        </Text>
+        <Flex
+          as="form"
+          w="100%"
+          h="100%"
+          align="center"
+          justify="center"
+          bg="white"
+          p="3"
+          flexDir="column"
+          onSubmit={handleSubmit}
+        >
+          <Stack width="100%" spacing="5">
+            <Flex flexDir="column">
+              <FormLabel>Email</FormLabel>
+              <ChakraInput
+                placeholder="Insira seu email" 
+                focusBorderColor="black"
+                borderRadius="1px"
+                border="2px solid black"
+                size="lg"
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+              />
+            </Flex>
+            <Flex flexDir="column">
+              <FormLabel>Password</FormLabel>
+              <ChakraInput
+                placeholder="Insira seu email" 
+                focusBorderColor="black"
+                borderRadius="1px"
+                border="2px solid black"
+                size="lg"
+                type="password"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+              />
+            </Flex>
+            <Stack>
+              <Button
+                type="submit"
+                color="black"
+                bg="yellow.400"
+                size="lg"
+                border="2px solid black"
+                borderRadius="1px"
+                _hover={{
+                  bgColor: "yellow.300"
+                }}
+              >
+                Sign up
+              </Button>
+            </Stack>
         </Stack>
-        <Stack spacing="4" mt="2rem">
-          <ChakraInput
-            placeholder="Insira seu email" 
-            focusBorderColor="purple.900"
-            bg="gray.900"
-            variant="filled"
-            _hover={{
-              bgColor: "#FFD6B9"
-            }}
-            size="lg"
-            type="email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            />
-          <ChakraInput
-            placeholder="Insira seu email" 
-            focusBorderColor="purple.900"
-            bg="gray.900"
-            variant="filled"
-            _hover={{
-              bgColor: "#FFD6B9"
-            }}
-            size="lg"
-            type="password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-          />
-          <Button type="submit" mt="6" colorScheme="pink" size="lg">Entrar</Button>
-        </Stack>
-        </Flex>
+      </Flex>
+      </Flex>
     </Flex>
   );
 }

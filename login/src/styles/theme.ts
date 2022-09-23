@@ -15,20 +15,21 @@ export const theme = extendTheme({
       "50": "#EEEEF2",
     },
     purple: {
-      "900": "#7F265B"
+      "900": "#7F265B",
+      "800": "#73114B"
     },
     text: {
       900: "#525252"
     }
   },
   fonts: {
-    heading: 'Nunito Sans',
-    body: 'Nunito Sans'
+    heading: 'Roboto',
+    body: 'Roboto'
   },
   styles: {
     global: {
       body: {
-        bg:'#FFD6B9',
+        bg:'white',
         color:'black.50',
       }
     }
